@@ -1,3 +1,9 @@
 IotApp/.idea
 IotApp/platforms
 IotApp/plugins
+
+IotDevice/.idea
+IotDevice/node_modules
+
+
+IotServer/.idea
