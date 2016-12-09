@@ -1,21 +1,17 @@
-/**
- * @author v.lugovsky
- * created on 16.12.2015
- */
 (function () {
   'use strict';
 
   angular.module('BlurAdmin.pages', [
       'ui.router',
-      //'IotAdmin.pages.inicio',
-      'IotAdmin.pages.tareas',
-  ]).config($routeConfig);
+      'IotAdmin.pages.dispositivos',
+  ])
+      .config(routeConfig);
 
   /** @ngInject */
-  /*function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
-    $urlRouterProvider.otherwise('/dashboard');
+  function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
+    $urlRouterProvider.otherwise('/dispositivos');
 
-    baSidebarServiceProvider.addStaticItem({
+    /*baSidebarServiceProvider.addStaticItem({
       title: 'Pages',
       icon: 'ion-document',
       subMenu: [{
@@ -48,7 +44,7 @@
           disabled: true
         }]
       }]
-    });
-  }*/
+    });*/
+  }
 
 })();
