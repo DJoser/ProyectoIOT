@@ -1,57 +1,50 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="editorApp">
+<html lang="en" ng-app="iotApp">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
     <title>I.O.T.</title>
     <!-- CSS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="./css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="./css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-<body ng-controller="notasController">
+<body ng-controller="mainCtrl">
 
 <div class="">
     <nav class="grey darken-3 white-text" role="navigation">
         <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">I.O.T.</a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="#">Dispositivos</a></li>
+                <li><a class="waves-effect" href="#!/dashboard">Panel de Control</a></li>
+                <li><div class="divider"></div></li>
+                <li><a class="waves-effect" href="#!/dispositivos">Dispositivos</a></li>
+                <li><a class="waves-effect" href="#!/eventos">Eventos</a></li>
+                <li><a class="waves-effect" href="#!/configuracion">Configuracion</a></li>
             </ul>
 
             <ul id="nav-mobile" class="side-nav white">
                 <li><div class="userView orange">
-                    <a href="#!user"><img class="circle" src="images/profile.jpg"></a>
-                    <a href="#!name"><span class="white-text name">Jose Ramon Navarro Marquez</span></a>
-                    <a href="#!email"><span class="white-text email">ardestino@gmail.com</span></a>
+                    <a href="#"><img class="circle" src="images/profile.jpg"></a>
+                    <a href="#"><span class="white-text name">Jose Ramon Navarro Marquez</span></a>
+                    <a href="#"><span class="white-text email">ardestino@gmail.com</span></a>
                 </div></li>
-                <li><a href="#!"><i class="material-icons">dashboard</i>Panel de Control</a></li>
+                <li><a class="waves-effect" href="#!/dashboard"><i class="material-icons">dashboard</i>Panel de Control</a></li>
                 <li><div class="divider"></div></li>
-                <li><a href="#!"><i class="material-icons">settings_remote</i>Dispositivos</a></li>
-                <li><a href="#!"><i class="material-icons">assignment</i>Eventos</a></li>
-                <li><a class="waves-effect" href="#!"><i class="material-icons">settings_applications</i>Configuracion</a></li>
+                <li><a class="waves-effect" href="#!/dispositivos"><i class="material-icons">settings_remote</i>Dispositivos</a></li>
+                <li><a class="waves-effect" href="#!/eventos"><i class="material-icons">assignment</i>Eventos</a></li>
+                <li><a class="waves-effect" href="#!/configuracion"><i class="material-icons">settings_applications</i>Configuracion</a></li>
             </ul>
             <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
     </nav>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col s12 m6" ng-repeat="nota in notas">
-            <div class="card">
-                <div class="card-content">
-                    <span class="card-title">{{nota.titulo}}</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+<div ng-view></div>
 
 <!--  Scripts-->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="js/materialize.js"></script>
-<script src="js/angular.min.js"></script>
-<script src="js/init.js"></script>
+<script src="./js/jquery-3.1.1.js"></script>
+<script src="./js/materialize.js"></script>
+<script src="./js/angular.js"></script>
+<script src="./js/angular-route.js"></script>
+<script src="./js/init.js"></script>
 </body>
 </html>
