@@ -7,3 +7,6 @@ IotDevice/node_modules
 
 
 IotServer/.idea
+IotServer/node_modules
+
+IotWeb/.tmp

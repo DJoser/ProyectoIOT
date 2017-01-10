@@ -1,29 +1,20 @@
-// Inicializar variables
-var m = require('mraa'); //require mraa
-console.log('MRAA Version: ' + m.getVersion()); //write the mraa version to the console
-var socket = require('socket.io-client')('http://10.7.94.214:3000/');
+// Constantes
+const SERVER_HOST = 'http://localhost:81/';
+
+// Modules
+var io = require('socket.io-client')(SERVER_HOST);
+var firm = require('./firmware')
 
 // Eventos de conexion del Servidor
-socket.on('connect', function(){
-    console.log('Se establecio la conexion con el servidor!');
+io.on('connect', function(){
+    console.log('Conexion establecida con ' + SERVER_HOST);
 });
-socket.on('disconnect', function(){
-    console.log('Se perdio la conexion con el servidor!');
+
+io.on('disconnect', function(){
+    console.log('Se perdio la conexion con ' + SERVER_HOST);
 });
 
 // Recibir comandos desde el servidor
-socket.on('cmd', function(msg){
+io.on('cmd', function(msg){
     console.log("cmd: " + msg);
-});
-
-///
-/// Control del LED
-///
-var myLed = new m.Gpio(13); //LED hooked up to digital pin 13 (or built in pin on Galileo Gen1 & Gen2)
-myLed.dir(m.DIR_OUT); //set the gpio direction to output
-socket.on('led on', function () {
-    myLed.write(ledState?1:0); //if ledState is true then write a '1' (high) otherwise write a '0' (low)
-});
-socket.on('led off', function () {
-    myLed.write(ledState?1:0); //if ledState is true then write a '1' (high) otherwise write a '0' (low)
 });
